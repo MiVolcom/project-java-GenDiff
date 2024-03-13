@@ -12,16 +12,16 @@ import picocli.CommandLine.Option;
         description = "Compares two configuration files and shows a difference.")
 
 public class App implements Callable<Integer> {
-    @Parameters(index = "0", description = "path to first file")
+    @Parameters(paramLabel = "filepath1", description = "path to first file")
     private File filepath1;
-    @Parameters(index = "1", description = "path to second file")
+    @Parameters(paramLabel = "filepath2", description = "path to second file")
     private File filepath2;
     @Option(names = {"-h", "--help"}, description = "Show this help message and exit.", required = true)
     private boolean help;
     @Option(names = {"-V", "--version"}, description = "Print version information and exit.", required = true)
     private boolean versionName;
-    @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
-    private String format = "format";
+    @Option(names = {"-f", "--format"}, paramLabel = "format", description = "output format [default: stylish]")
+    File format;
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
