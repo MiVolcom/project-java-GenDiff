@@ -2,33 +2,40 @@ package hexlet.code;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
-import java.io.File;
 import java.util.concurrent.Callable;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Option;
 
 @Command (
-        name = "gendiff", mixinStandardHelpOptions = true, version = "1.0",
+        name = "gendiff", mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 
 public class App implements Callable<Integer> {
-    @Parameters(paramLabel = "filepath1", description = "path to first file")
-    private File filepath1;
-    @Parameters(paramLabel = "filepath2", description = "path to second file")
-    private File filepath2;
-    @Option(names = {"-h", "--help"}, description = "Show this help message and exit.", required = true)
-    private boolean help;
-    @Option(names = {"-V", "--version"}, description = "Print version information and exit.", required = true)
-    private boolean versionName;
-    @Option(names = {"-f", "--format"}, paramLabel = "format", description = "output format [default: stylish]")
-    File format;
+    @Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
+    private String filepath1;
+
+    @Parameters(index = "1", description = "path to second file", paramLabel = "filepath2")
+    private String filepath2;
+
+    @Option(names = {"-f", "--format"}, defaultValue = "stylish", paramLabel = "format",
+            description = "output format [default: ${DEFAULT-VALUE}]")
+    private String format;
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
+
     @Override
     public Integer call() throws Exception {
-        return null;
+        try {
+            System.out.println(Differ.generate(filepath1, filepath2, format));
+            return 0;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return 1;
+        }
     }
+
+
 }
