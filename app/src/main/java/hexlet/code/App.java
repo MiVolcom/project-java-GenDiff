@@ -21,18 +21,17 @@ public class App implements Callable<Integer> {
             description = "output format [default: ${DEFAULT-VALUE}]")
     private String format;
 
-    public static void main(String[] args) {
-        int exitCode = new CommandLine(new App()).execute(args);
-        System.exit(exitCode);
-    }
-
     @Override
     public Integer call() throws Exception {
         try {
-            Differ.generate(filepath1, filepath2, format);
+            System.out.println(Differ.generate(filepath1, filepath2, format));
             return 0;
         } catch (Exception e) {
             return 1;
         }
+    }
+    public static void main(String[] args) throws Exception {
+        int exitCode = new CommandLine(new App()).execute(args);
+        System.exit(exitCode);
     }
 }
