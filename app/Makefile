@@ -1,11 +1,13 @@
 install:
-	./gradlew install
+	./gradlew clean install
 
-run-dist:
-	./build/install/app/bin/app
+run-yml:
+	./build/install/app/bin/app src/test/resources/filepath1.yml src/test/resources/filepath2.yml
+
+run-json:
+	./build/install/app/bin/app src/test/resources/json1.json src/test/resources/json2.json
 
 build:
-	./gradlew checkStyleMain
-	./gradlew checkstyleTest
+	./gradlew clean build
 .PHONY: build
 
