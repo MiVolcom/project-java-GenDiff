@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'checkstyle'
     id 'jacoco'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 group = 'hexlet.code'
@@ -22,20 +23,19 @@ dependencies {
 }
 
 test {
+    finalizedBy jacocoTestReport
     useJUnitPlatform()
 }
 application {
     mainClass = 'hexlet.code.App'
 }
 compileJava {
+    options.release = 17
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
-testlogger {
-    showStandardStreams true
-}
-
 jacocoTestReport {
+    dependsOn test
     reports {
         xml.required = true
     }
