@@ -21,7 +21,7 @@ public class App implements Callable<Integer> {
             description = "output format [default: ${DEFAULT-VALUE}]")
     private String format;
 
-    @Override
+
     public Integer call() throws Exception {
         try {
             System.out.println(Differ.generate(filepath1, filepath2, format));
