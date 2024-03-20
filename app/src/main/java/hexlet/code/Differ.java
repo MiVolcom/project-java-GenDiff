@@ -17,8 +17,8 @@ public class Differ {
         var cont1 = getDataFromFilePath(filepath1);
         var cont2 = getDataFromFilePath(filepath2);
 
-        var map1 = parseToMap(cont1);
-        var map2 = parseToMap(cont2);
+        var map1 = Parser.parser(cont1);
+        var map2 = Parser.parser(cont2);
 
         List<Map<String, Object>> mapList = BuilderDiff.getDiff(map1, map2);
         return Format.format(mapList, format);
@@ -33,12 +33,4 @@ public class Differ {
         String content = Files.readString(path);
         return content;
     }
-
-    public static Map<String, Object> parseToMap(String filePath) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> jsonMap = objectMapper.readValue(filePath, new TypeReference<>() { });
-        return jsonMap;
-    }
-
-
 }

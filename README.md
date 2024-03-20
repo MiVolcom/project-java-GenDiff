@@ -3,4 +3,6 @@
 
 https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW step 5
 https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA step 7
+https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V step 8
+
 
