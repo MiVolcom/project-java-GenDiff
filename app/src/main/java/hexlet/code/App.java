@@ -25,7 +25,6 @@ public class App implements Callable<Integer> {
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
-
     @Override
     public Integer call() throws Exception {
         System.out.println(Differ.generate(filepath1, filepath2, format));
