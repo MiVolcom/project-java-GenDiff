@@ -1,6 +1,7 @@
 package hexlet.code.formatter;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 public class Plain {
     public static String formatPlain(List<Map<String, Object>> mapList) {
@@ -27,7 +28,7 @@ public class Plain {
         return result.toString().trim();
     }
     public static String complexValue(Object currentData) {
-        if (currentData instanceof Object[] || currentData instanceof List<?> || currentData instanceof Map<?,?>) {
+        if (currentData instanceof Object[] || currentData instanceof List<?> || currentData instanceof Map<?, ?>) {
             return "[complex value]";
         } else if (currentData == null) {
             return null;
@@ -36,9 +37,4 @@ public class Plain {
         }
         return currentData.toString();
     }
-
-
-
-
-
 }

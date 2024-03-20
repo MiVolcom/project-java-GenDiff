@@ -10,6 +10,9 @@ run-json:
 run-fPlain:
 	./build/install/app/bin/app -f plain src/test/resources/json1.json src/test/resources/json2.json
 
+run-fJson:
+	./build/install/app/bin/app -f json src/test/resources/json1.json src/test/resources/json2.json
+
 build:
 	./gradlew clean build
 .PHONY: build

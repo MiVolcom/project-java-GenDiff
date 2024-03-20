@@ -5,6 +5,8 @@ https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW step 5
 https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA step 7
 https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V step 8
 https://asciinema.org/a/qjER2dibDvFvJW31UPRa2KMy6 step 9
+https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb step 10
+
 
 
 
