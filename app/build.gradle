@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 group = 'hexlet.code'
@@ -28,4 +29,14 @@ application {
 }
 compileJava {
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
+}
+
+testlogger {
+    showStandardStreams true
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
 }
