@@ -14,11 +14,14 @@ import java.util.Map;
 
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) throws Exception {
-        var cont1 = getDataFromFilePath(filepath1);
-        var cont2 = getDataFromFilePath(filepath2);
+        String cont1 = getDataFromFilePath(filepath1);
+        String cont2 = getDataFromFilePath(filepath2);
 
-        var map1 = Parser.parser(cont1);
-        var map2 = Parser.parser(cont2);
+        String typeFile1 = getType(filepath1);
+        String typeFile2 = getType(filepath2);
+
+        Map<String, Object> map1 = Parser.parser(cont1, typeFile1);
+        Map<String, Object> map2 = Parser.parser(cont2, typeFile2);
 
         List<Map<String, Object>> mapList = BuilderDiff.getDiff(map1, map2);
         return Format.format(mapList, format);
@@ -32,5 +35,8 @@ public class Differ {
         Path path = Paths.get(filePath);
         String content = Files.readString(path);
         return content;
+    }
+    public static String getType(String filePath) {
+        return filePath.endsWith("json") ? "json" : "yml";
     }
 }

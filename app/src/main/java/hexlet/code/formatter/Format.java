@@ -8,6 +8,8 @@ public class Format {
         switch (format) {
             case "stylish":
                 return Stylish.formatStylish(mapList);
+            case "plain":
+                return Plain.formatPlain(mapList);
             default:
                 System.out.println("Format" + format + "incorrect");
         }
