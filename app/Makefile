@@ -47,4 +47,5 @@ run-fJson:
 	./build/install/app/bin/app -f json src/test/resources/json1.json src/test/resources/json2.json
 
 .PHONY: build
+.PHONY: install
 
