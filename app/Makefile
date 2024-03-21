@@ -3,9 +3,6 @@
 setup:
 	./gradlew wrapper --gradle-version 8.5
 
-clean:
-	./gradlew clean
-
 build:
 	./gradlew clean build
 
@@ -47,5 +44,4 @@ run-fJson:
 	./build/install/app/bin/app -f json src/test/resources/json1.json src/test/resources/json2.json
 
 .PHONY: build
-.PHONY: install
 
