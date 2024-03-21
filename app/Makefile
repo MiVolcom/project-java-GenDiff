@@ -27,8 +27,7 @@ lint:
 update-deps:
 	make -C app update-deps
 
-build-run:
-	build run
+build-run: build run
 
 run-yml:
 	./build/install/app/bin/app src/test/resources/filepath1.yml src/test/resources/filepath2.yml
