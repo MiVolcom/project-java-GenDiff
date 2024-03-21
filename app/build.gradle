@@ -29,6 +29,9 @@ test {
     finalizedBy jacocoTestReport
     useJUnitPlatform()
 }
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
 application {
     mainClass = 'hexlet.code.App'
 }
@@ -36,17 +39,3 @@ compileJava {
     options.release = 17
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
-
-tasks.test {
-    useJUnitPlatform()
-    // https://technology.lastminute.com/junit5-kotlin-and-gradle-dsl/
-    testLogging {
-        exceptionFormat = TestExceptionFormat.FULL
-        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
-        // showStackTraces = true
-        // showCauses = true
-        showStandardStreams = true
-    }
-}
-
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
