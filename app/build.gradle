@@ -29,12 +29,18 @@ test {
     finalizedBy jacocoTestReport
     useJUnitPlatform()
 }
+
 jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
+    dependsOn test
+    reports {
+        xml.required = true
+    }
 }
+
 application {
     mainClass = 'hexlet.code.App'
 }
+
 compileJava {
     options.release = 17
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
