@@ -33,7 +33,6 @@ check-deps:
 
 build-run: build run
 
-.PHONY: build
 
 run-yml:
 	./build/install/app/bin/app src/test/resources/filepath1.yml src/test/resources/filepath2.yml
