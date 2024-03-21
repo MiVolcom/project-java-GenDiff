@@ -1,3 +1,50 @@
+Skip to content
+hexlet-boilerplates
+/
+java-package
+
+Type / to search
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Files
+Go to file
+t
+.github/workflows
+main.yml
+config
+gradle
+src
+.gitattributes
+.gitignore
+Makefile
+README.md
+build.gradle.kts
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle.kts
+Breadcrumbsjava-package/.github/workflows
+/main.yml
+Latest commit
+author
+Maksim Litvinov
+add jacoco example
+e0f8991
+ · 
+6 months ago
+History
+File metadata and controls
+
+Code
+
+Blame
+29 lines (26 loc) · 782 Bytes
 name: Java CI
 
 on:
@@ -9,22 +56,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '20'
           distribution: 'temurin'
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v2
         with:
-          arguments: build
-          build-root-directory: app
-      - name: Publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-          JACOCO_SOURCE_PATH: app/src/main/java
-        with:
-          coverageCommand: make report
-          coverageLocations: ${{github.workspace}}/app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
+          gradle-version: 8.3
+      - run: ./gradlew checkstyleMain
+      - run: ./gradlew test
+       - name: Publish code coverage
+         uses: paambaati/codeclimate-action@v5.0.0
+         env:
+           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+           JACOCO_SOURCE_PATH: src/main/java
+         with:
+           coverageCommand: make report
+           coverageLocations: ${{github.workspace}}/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
+java-package/.github/workflows/main.yml at main · hexlet-boilerplates/java-package
