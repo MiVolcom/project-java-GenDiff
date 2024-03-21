@@ -19,7 +19,7 @@ test:
 	make -C app test
 
 report:
-	make report
+	make -C report
 
 lint:
 	make -C app lint
