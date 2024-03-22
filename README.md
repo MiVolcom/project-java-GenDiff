@@ -11,6 +11,8 @@
 
 Пример использования:
 
+[![asciicast](https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW.png)](https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW)
+
 
 * https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW 
 
