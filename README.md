@@ -13,13 +13,13 @@
 
 [![asciicast](https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW.png)](https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW)
 
-[![Watch the video](https://asciinema.org/a/org/a/wfjssISkhPn8RjfG5az4K81AA.png)](https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA)
+[![asciicast](https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA.png)](https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA)
 
-[![Watch the video](https://asciinema.org/a/org/a/p885WOgqBwOxHKHrWySFx6P7V.png)](https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V)
+[![asciicast](https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V.png)](https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V)
 
-[![Watch the video](https://asciinema.org/a/org/a/qjER2dibDvFvJW31UPRa2KMy6.png)](https://asciinema.org/a/qjER2dibDvFvJW31UPRa2KMy6)
+[![asciicast](https://asciinema.org/a/qjER2dibDvFvJW31UPRa2KMy6.png)](https://asciinema.org/a/qjER2dibDvFvJW31UPRa2KMy6)
 
-[![Watch the video](https://asciinema.org/a/org/a/3zn6EtZVXyglCNbJ0VGTpD9bb.png)](https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb)
+[![asciicast](https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb.png)](https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb)
 
 
 * https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW 
