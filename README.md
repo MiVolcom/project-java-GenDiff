@@ -22,16 +22,3 @@
 [![asciicast](https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb.png)](https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb)
 
 
-* https://asciinema.org/a/XmucR9kGZYHONfIRZIGQXtFgW 
-
-* https://asciinema.org/a/wfjssISkhPn8RjfG5az4K81AA 
-
-* https://asciinema.org/a/p885WOgqBwOxHKHrWySFx6P7V
-
-* https://asciinema.org/a/qjER2dibDvFvJW31UPRa2KMy6
-
-* https://asciinema.org/a/3zn6EtZVXyglCNbJ0VGTpD9bb 
-
-
-
-
