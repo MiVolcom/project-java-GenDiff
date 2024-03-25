@@ -20,8 +20,10 @@ public class Plain {
                                 .append(complexValue(map.get("oldValue"))).append(" to ")
                                 .append(complexValue(map.get("newValue")))
                                 .append("\n");
+                case "unchanged" -> {
+                }
 
-                default -> result.append("");
+                default -> throw new RuntimeException("no status");
             }
 
         }
@@ -31,7 +33,7 @@ public class Plain {
         if (currentData instanceof Object[] || currentData instanceof List<?> || currentData instanceof Map<?, ?>) {
             return "[complex value]";
         } else if (currentData == null) {
-            return null;
+            return String.format("null");
         } else if (currentData instanceof String) {
             return "'" + currentData + "'";
         }

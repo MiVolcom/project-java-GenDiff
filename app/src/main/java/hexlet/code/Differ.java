@@ -16,8 +16,8 @@ public class Differ {
         String typeFile1 = getType(filepath1);
         String typeFile2 = getType(filepath2);
 
-        Map<String, Object> map1 = Parser.parser(cont1, typeFile1);
-        Map<String, Object> map2 = Parser.parser(cont2, typeFile2);
+        Map<String, Object> map1 = Parser.getData(cont1, typeFile1);
+        Map<String, Object> map2 = Parser.getData(cont2, typeFile2);
 
         List<Map<String, Object>> mapList = BuilderDiff.getDiff(map1, map2);
         return Format.format(mapList, format);
@@ -33,6 +33,7 @@ public class Differ {
         return content;
     }
     public static String getType(String filePath) {
-        return filePath.endsWith("json") ? "json" : "yml";
+        int index = filePath.lastIndexOf('.');
+        return index > 0 ? filePath.substring(index + 1) : "";
     }
 }

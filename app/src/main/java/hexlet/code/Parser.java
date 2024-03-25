@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.util.Map;
 
 public class Parser {
-    public static Map<String, Object> parser(String filePath, String typeFile) throws JsonProcessingException {
+    public static Map<String, Object> getData(String filePath, String typeFile) throws JsonProcessingException {
         ObjectMapper objectMapper = getCurrentType(typeFile);
         Map<String, Object> parseToMap = objectMapper.readValue(filePath, new TypeReference<>() { });
         return parseToMap;

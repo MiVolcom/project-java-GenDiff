@@ -14,12 +14,13 @@ public class Stylish {
                         .append(map.get("newValue")).append("\n");
                 case "unchanged" -> result.append("    ").append(map.get("key")).append(": ")
                         .append(map.get("oldValue")).append("\n");
-                default -> {
+                case "updated" -> {
                     result.append("  - ").append(map.get("key")).append(": ")
                             .append(map.get("oldValue")).append("\n");
                     result.append("  + ").append(map.get("key")).append(": ")
                             .append(map.get("newValue")).append("\n");
                 }
+                default -> throw new RuntimeException("no status");
             }
 
         }
