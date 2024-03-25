@@ -1,26 +1,30 @@
 package hexlet.code.formatter;
-
 import java.util.List;
 import java.util.Map;
+import static hexlet.code.BuilderDiff.Status;
+import static hexlet.code.BuilderDiff.Status.DELETED;
+import static hexlet.code.BuilderDiff.Status.ADDED;
+import static hexlet.code.BuilderDiff.Status.CHANGED;
+import static hexlet.code.BuilderDiff.Status.UNCHANGED;
 
 public class Plain {
-    public static String formatPlain(List<Map<String, Object>> mapList) {
+    public static String formatPlain(List<Status> list) {
         StringBuilder result = new StringBuilder();
-        for (Map<String, Object> map : mapList) {
-            switch (map.get("status").toString()) {
-                case "removed" -> result.append("Property ").append("'")
-                        .append(map.get("key")).append("'").append(" was removed").append("\n");
-                case "added" -> result.append("Property ").append(complexValue(map.get("key")))
+        for (var current : list) {
+            switch (current.getStatus()) {
+                case DELETED -> result.append("Property ").append("'")
+                        .append(current.getKey()).append("'").append(" was removed").append("\n");
+                case ADDED -> result.append("Property ").append(complexValue(current.getKey()))
                         .append(" was added with value: ")
-                        .append(complexValue(map.get("newValue")))
+                        .append(complexValue(current.getNewValue()))
                         .append("\n");
-                case "updated" ->
-                        result.append("Property ").append(complexValue(map.get("key")))
+                case CHANGED ->
+                        result.append("Property ").append(complexValue(current.getKey()))
                                 .append(" was updated. From ")
-                                .append(complexValue(map.get("oldValue"))).append(" to ")
-                                .append(complexValue(map.get("newValue")))
+                                .append(complexValue(current.getOldValue())).append(" to ")
+                                .append(complexValue(current.getNewValue()))
                                 .append("\n");
-                case "unchanged" -> {
+                case UNCHANGED -> {
                 }
 
                 default -> throw new RuntimeException("no status");

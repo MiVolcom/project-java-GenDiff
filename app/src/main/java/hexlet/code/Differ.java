@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import static hexlet.code.BuilderDiff.Status;
 
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) throws Exception {
@@ -19,8 +20,8 @@ public class Differ {
         Map<String, Object> map1 = Parser.getData(cont1, typeFile1);
         Map<String, Object> map2 = Parser.getData(cont2, typeFile2);
 
-        List<Map<String, Object>> mapList = BuilderDiff.getDiff(map1, map2);
-        return Format.format(mapList, format);
+        List<Status> list = BuilderDiff.getDiff(map1, map2);
+        return Format.format(list, format);
     }
 
     public static String generate(String filePath1, String filepath2) throws Exception {
