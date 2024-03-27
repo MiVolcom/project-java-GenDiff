@@ -41,18 +41,11 @@ public class DifferTest {
     public void generateTest(String format) throws Exception {
         String path1 = getFixturePath("filepath1." + format).toString();
         String path2 = getFixturePath("filepath2." + format).toString();
-        String path3 = getFixturePath("filepath1." + format).toString();
-        String path4 = getFixturePath("filepath2." + format).toString();
-
 
         assertThat(Differ.generate(path1, path2, "stylish")).isEqualTo(resultStylish);
         assertThat(Differ.generate(path1, path2, "plain")).isEqualTo(resultPlain);
         assertThat(Differ.generate(path1, path2, "json")).isEqualTo(resultJson);
-        assertThat(Differ.generate(path3, path4, "stylish")).isEqualTo(resultStylish);
-        assertThat(Differ.generate(path3, path4, "plain")).isEqualTo(resultPlain);
-        assertThat(Differ.generate(path3, path4, "json")).isEqualTo(resultJson);
         assertThat(Differ.generate(path1, path2)).isEqualTo(resultStylish);
-        assertThat(Differ.generate(path3, path4)).isEqualTo(resultStylish);
 
 
 
