@@ -1,11 +1,12 @@
 package hexlet.code.formatter;
+import hexlet.code.Status;
+
 import java.util.List;
 import java.util.Map;
-import static hexlet.code.BuilderDiff.Status;
-import static hexlet.code.BuilderDiff.Status.DELETED;
-import static hexlet.code.BuilderDiff.Status.ADDED;
-import static hexlet.code.BuilderDiff.Status.CHANGED;
-import static hexlet.code.BuilderDiff.Status.UNCHANGED;
+import static hexlet.code.Status.DELETED;
+import static hexlet.code.Status.ADDED;
+import static hexlet.code.Status.CHANGED;
+import static hexlet.code.Status.UNCHANGED;
 
 public class Plain {
     public static String formatPlain(List<Status> list) {
@@ -27,7 +28,7 @@ public class Plain {
                 case UNCHANGED -> {
                 }
 
-                default -> throw new RuntimeException("no status");
+                default -> throw new RuntimeException("Unknown status: " + current.getStatus());
             }
 
         }

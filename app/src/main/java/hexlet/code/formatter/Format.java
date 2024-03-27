@@ -1,8 +1,9 @@
 package hexlet.code.formatter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import hexlet.code.Status;
+
 import java.util.List;
-import static hexlet.code.BuilderDiff.Status;
 
 public class Format {
     public static String format(List<Status> list, String format) throws JsonProcessingException {

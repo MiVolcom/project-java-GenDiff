@@ -14,7 +14,7 @@ public class BuilderDiff {
         keySet.addAll(map2.keySet());
         for (String key : keySet) {
             if (map1.containsKey(key) && !map2.containsKey(key)) {
-                list.add(new Status(key,  map1.get(key), null, Status.DELETED));
+                list.add(new Status(key, map1.get(key), null, Status.DELETED));
             } else if (!map1.containsKey(key) && map2.containsKey(key)) {
                 list.add(new Status(key, null, map2.get(key), Status.ADDED));
             } else if (!Objects.equals(map1.get(key), map2.get(key))) {
@@ -26,41 +26,6 @@ public class BuilderDiff {
         }
         return list;
     }
-
-    public static final class Status {
-
-        public static final String DELETED = "deleted";
-        public static final String ADDED = "added";
-        public static final String CHANGED = "updated";
-        public static final String UNCHANGED = "unchanged";
-
-        private Object key;
-        private Object oldValue;
-        private Object newValue;
-        private String status;
-
-
-        Status(String keykey, Object oldvalue, Object newvalue, String statusname) {
-            key = keykey;
-            oldValue = oldvalue;
-            newValue = newvalue;
-            status = statusname;
-        }
-
-        public Object getKey() {
-            return key;
-        }
-
-        public String getStatus() {
-            return status;
-        }
-
-        public Object getOldValue() {
-            return oldValue;
-        }
-
-        public Object getNewValue() {
-            return newValue;
-        }
-    }
 }
+
+

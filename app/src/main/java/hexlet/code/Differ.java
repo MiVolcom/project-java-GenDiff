@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import static hexlet.code.BuilderDiff.Status;
 
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) throws Exception {
