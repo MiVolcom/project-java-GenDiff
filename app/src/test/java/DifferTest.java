@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 
-public class DifferTest {
+public final class DifferTest {
     //private final String path1 = "src/test/resources/filepath1.json";
     //private final String path2 = "src/test/resources/filepath2.json";
     //private final String path3 = "src/test/resources/filepath1.yml";
