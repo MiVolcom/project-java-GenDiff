@@ -16,8 +16,8 @@ public class Differ {
         String typeFile1 = getType(filepath1);
         String typeFile2 = getType(filepath2);
 
-        Map<String, Object> map1 = Parser.getData(cont1, typeFile1);
-        Map<String, Object> map2 = Parser.getData(cont2, typeFile2);
+        Map<String, Object> map1 = Parser.parse(cont1, typeFile1);
+        Map<String, Object> map2 = Parser.parse(cont2, typeFile2);
 
         List<Status> list = BuilderDiff.getDiff(map1, map2);
         return Format.format(list, format);
