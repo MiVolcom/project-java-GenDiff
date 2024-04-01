@@ -21,7 +21,10 @@ public class BuilderDiff {
                 list.add(new Status(key, map1.get(key), map2.get(key), Status.CHANGED));
             } else if (map1.get(key).equals(map2.get(key))) {
                 list.add(new Status(key, map1.get(key), null, Status.UNCHANGED));
+            } else {
+                throw new RuntimeException("Unknown key: '" + key + "'");
             }
+
         }
         return list;
     }
